@@ -1,3 +1,5 @@
+package br.com.alura.age.model;
+
 import java.util.Scanner;
 
 public class AgePerson {
