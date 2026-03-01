@@ -3,8 +3,8 @@ package br.com.alura.age.model;
 import java.util.Scanner;
 
 public class AgePerson {
-    private String name = "Felipe Joselito";
-    private int age;
+    private String name;
+    private int age = 0;
 
     public String getName() {
         return name;
@@ -22,6 +22,11 @@ public class AgePerson {
         this.age = age;
     }
 
+    public AgePerson(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     //Tchnique specifications
     public void specifications(){
         System.out.println("Nome: " + name);
@@ -33,14 +38,21 @@ public class AgePerson {
 
         System.out.println("Enter the age for know if the major or minor");
 
-        Scanner input = new Scanner(System.in);
-        int ageConsul = input.nextInt();
+        //Scanner input = new Scanner(System.in);
+        //int ageConsul = input.nextInt();
 
-        if (ageConsul >= 18){
+        if (getAge() >= 18){
             System.out.println("He´s major.");
         } else {
             System.out.println("He´s minor.");
         }
-        age = ageConsul;
+        age = getAge();
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + getName() +
+                "\nAge: " + getAge() +
+                "\n";
     }
 }
